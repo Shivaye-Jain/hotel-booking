@@ -5,7 +5,7 @@ import connectDB from "../configs/db.js";
 const clerkWebHooks = async (req, res) => {
     try {
 
-        await dbConnect(); // ensure DB connected
+        await connectDB(); // ensure DB connected
         // Create a Svix instance with clerk webhook secret.
         const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
         const headers = {
